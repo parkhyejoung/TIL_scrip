@@ -22,3 +22,8 @@
 * `var pwIO(인풋 아웃풋 약자) = document.qureySelector('input[type*=pass]');` < 인풋태그 안에 타입이 패스인 경우 
 * `let genderChk = document.qureySelector('input[name*=gender]');` <인풋의 네임이 젠더와 같을때
 * 한번 변수 명 지정시 Js 안에선 변수명만 사용한다!
+## a 태그 기본 이벤트 동작 취소
+* `a` 태그를 클릭이벤트 객체로 사용 시 대상을 터치 또는 클릭하면 화면 세로 스크롤이 최상단으로 올라가는 문제점이 발생한다.
+* **해결법** : 이벤트함수 내에 익명함수 및 화살표함수를 작성하고 매개변수에 `e` 작성 후 함수 실행 내에 `e.preventDefault()`를 작성한다.
+* (예) `a객체.addEventListener('click',function(e)){e.preventDefault();})`
+* (예) `a객체.addEventListener('click'(e)=>e.preventDefault())`
