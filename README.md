@@ -12,4 +12,13 @@
 * **객체** : 자바스트립트에서 제어하려는 대상(보통 데이터를 담은 변수가 객체 대상이 되는 경우가 많음)
 * **속성** : 객체가 가진 고유한 속성(객체가 img라면 src , alt가 속성)
 * **함수** : 객체를 이용한 자바스크립의 실행결과 , 뒤에 소괄호()가 붙음.
-
+## 자바스크립트 DOM 지정규칙
+* HTML태그의 class, name , id , value 등의 이름 규칙 : 영어소문자_영어소문자 (예) `user_id` 
+* Javascript의 함수 및 이름 변수 규칙 : Camel 표기법 (예) `userId`
+### 변수 등록 시 순서
+* `cosnt 의미있는 변수명 = document.qureySelector('HTML 요소 또는 클래스, 아이디, 속성 선택자 등')`
+* `const userId = document.qureySelector('.user_Id);`  <
+* `let liActive = document.qureySelector('li.active');` < li에 들어있는 클래스 active 라는뜻
+* `var pwIO(인풋 아웃풋 약자) = document.qureySelector('input[type*=pass]');` < 인풋태그 안에 타입이 패스인 경우 
+* `let genderChk = document.qureySelector('input[name*=gender]');` <인풋의 네임이 젠더와 같을때
+* 한번 변수 명 지정시 Js 안에선 변수명만 사용한다!
