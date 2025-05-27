@@ -18,27 +18,45 @@ thumbNailA[0].addEventListener('click',function(){
     console.log(this);
     console.log(this.children[0].src);
     console.log(popupBg.children[0].children[0].src); //팝업bg의 자식의 자식의 src 확인
-    popupShow(); //팝업 출력 함수 호출
-    popupBg.children[0].children[0].src = this.children[0].src
+    popupShow(this); //팝업 출력 함수 호출
 })
 thumbNailA[1].addEventListener('click',function(){
-    console.log(0);
-    console.log(this);
-    console.log(this.children[0].src);
-    console.log(popupBg.children[0].children[0].src); //팝업bg의 자식의 자식의 src 확인
-    popupShow(); //팝업 출력 함수 호출
-    popupBg.children[0].children[0].src = this.children[0].src
+    popupShow(this); //팝업 출력 함수 호출
 })
 thumbNailA[2].addEventListener('click',function(){
-    console.log(0);
-    console.log(this);
-    console.log(this.children[0].src);
-    console.log(popupBg.children[0].children[0].src); //팝업bg의 자식의 자식의 src 확인
-    popupShow(); //팝업 출력 함수 호출
-    popupBg.children[0].children[0].src = this.children[0].src
+    popupShow(this); //팝업 출력 함수 호출
 })
-function popupShow(){
-    return popupBg.style.display = 'flex';
+thumbNailA[3].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[4].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[5].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[6].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[7].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[8].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[9].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+thumbNailA[10].addEventListener('click',function(){
+    popupShow(this); //팝업 출력 함수 호출
+})
+function popupShow(target){
+    console.log('-----------함수시작위치와 에러체크')
+/*     console.log(popupBg.children[0].children[0].this.children[0].src);//정상체크 */
+    popupBg.style.display = 'flex';
+    popupBg.children[0].children[0].src = target.children[0].src;
+    popupShow(this);
+    return;  //함수종료한다는뜻
 }
 popupBg.addEventListener('click',popupHide)
 function popupHide(){
