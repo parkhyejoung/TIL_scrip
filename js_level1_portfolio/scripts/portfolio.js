@@ -47,15 +47,11 @@ thumbNailA[8].addEventListener('click',function(){
 thumbNailA[9].addEventListener('click',function(){
     popupShow(this); //팝업 출력 함수 호출
 })
-thumbNailA[10].addEventListener('click',function(){
-    popupShow(this); //팝업 출력 함수 호출
-})
 function popupShow(target){
     console.log('-----------함수시작위치와 에러체크')
 /*     console.log(popupBg.children[0].children[0].this.children[0].src);//정상체크 */
     popupBg.style.display = 'flex';
     popupBg.children[0].children[0].src = target.children[0].src;
-    popupShow(this);
     return;  //함수종료한다는뜻
 }
 popupBg.addEventListener('click',popupHide)
