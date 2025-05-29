@@ -1,3 +1,4 @@
+body, html {scroll-behavior: smooth;}
 main {
     background: aqua;
     width: 995px;
@@ -104,6 +105,6 @@ main section .right_order .btn_group #buy_btn {
     background-color: #59AFFF;
     color: #fff;
 }
-
-
-
+main .info {height: 100vh;}
+main #review {height: 100vh; background: yellow;}
+main .board {height: 100vh;}
