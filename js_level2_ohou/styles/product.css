@@ -1,6 +1,5 @@
 body, html {scroll-behavior: smooth;}
 main {
-    background: aqua;
     width: 995px;
     margin:0 auto;
 }
@@ -13,7 +12,6 @@ main section {
     justify-content: space-between;
 }
 main section .left_thumnails {
-    background: yellow;
     display: flex;
 }
 main section .left_thumnails .small {
@@ -37,11 +35,9 @@ main section .left_thumnails .big img {
     width: 100%;
 }
 main section .right_order {
-    background: lime;
 }
 main section .right_order > * {
     margin-bottom: 25px;
-    background-color: yellow;
 }
 main section .right_order .brand {}
 main section .right_order h1 {}
@@ -58,12 +54,11 @@ main section .right_order .benefit_delivery {overflow: hidden;
 }
 main section .right_order .benefit_delivery dt {
     width: 80px;
-    background-color: pink;
     flex-flow: row nowrap;
     float:left;
 }
 main section .right_order .benefit_delivery dd {
-    width: calc(100% - 80px); background: aqua;
+    width: calc(100% - 80px);
     float:right;
 }
 main section .right_order .benefit_delivery dd em {}
@@ -106,5 +101,5 @@ main section .right_order .btn_group #buy_btn {
     color: #fff;
 }
 main .info {height: 100vh;}
-main #review {height: 100vh; background: yellow;}
+main #review {height: 100vh;}
 main .board {height: 100vh;}

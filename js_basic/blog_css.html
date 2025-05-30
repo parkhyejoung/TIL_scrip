@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 복습 + 블로그</title>
+    <style>
+        #bg{
+            background:url(https://th2.tmon.kr/thumbs/image/0e5/2be/33f/d1af957a3_700x700_95_FIT.jpg) no-repeat center / cover;
+            width: 100vw; height: 100vh;
+        } 
+        #bg .gradient {
+            /* 그라디언트 색상 */
+            /* 직선 방향 그라디언트 background:linear-gradient(,) */
+            /* 원형 방향 그라디언트 background:radial-gradient(,) */
+            /* background:linear-gradient(black, #fff); */
+            background: linear-gradient(90deg,rgba(57, 110, 85, 1) 0%, rgba(60, 158, 101, 1) 38%, rgba(237, 221, 83, 1) 67%);
+            opacity: 0.3;
+            height: 100vh; 
+        }
+        #bg .gradient section {
+            /* a b 두개의 요소를 grid 로 정렬하고 싶다면 그 부모(section)에게 명령 */
+            display: grid; /* grid 필수 선언 */
+            /* grid-template-columns: 100px 200px; */ /* columns 세로열로 배치할래 1열은 100px 2열은 더 길게 200px */
+            /* 1열 , 2열 순서대로 자식 너비지정 */
+/*             grid-template-columns: repeat(2,minmax(200px,auto)); */
+            grid-template-columns: 200px 1fr; /* 1열 - 200px 2열 - 100% - 200px을 뺀 나머지 크기가 1fr*/
+        /*     grid-template-rows: 300px 100px; */ /* 각 1행 300px 2행 100px 자식의 높이지정 */
+        /* 1열 2열 반복(repeat)적용 최소(min) 200 최대(max) auto 100%와 같이 인식 */
+            grid-template-rows: repeat(2,100px); /* 2행 100px 반복 */
+        }
+        #bg .gradient section > div {
+            /* width:100px;  *//* height: 100px; */
+            /* 부모에 grid로 열,행 크기 입력 시 자식에는 별도로 크기를 입력하면 안된다. */
+            border:5px solid pink;
+        }
+        #bg .gradient section .a {}
+        #bg .gradient section .b {}
+        #bg .gradient section > div svg {width: 80px;}
+        .box {
+            display: grid;
+            grid-template-areas: 
+            'list1 list2 list3'
+            'list4 list5 list6';
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            gap: 10px 10px 10px
+        }
+        .box li {border: 2px solid #000;}
+        .box li:nth-child(1) {grid-area:list1}
+        .box li:nth-child(2) {grid-area:list2}
+        .box li:nth-child(3) {grid-area:list3}
+        .box li:nth-child(4) {grid-area:list4}
+        .box li:nth-child(5) {grid-area:list5}
+        .box li:nth-child(6) {grid-area:list6}
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div id="bg">
+        <div class="gradient">
+            <section>
+                <div class="a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M446.5 97.4C439.7 60.2 407.2 32 368 32c-39.2 0-71.7 28.3-78.5 65.5C126.8 113-.5 250.1 0 417 .1 451.9 29.1 480 64 480h304c8.8 0 16-7.2 16-16 0-17.7-14.3-32-32-32h-79.5l35.8-48.3c24.1-36.2 10.4-88.3-33.7-106.6-23.9-9.9-51.6-4.7-72.2 10.9l-32.8 24.6c-7.1 5.3-17.1 3.9-22.4-3.2-5.3-7.1-3.9-17.1 3.2-22.4l34.8-26.1c36.8-27.7 88.3-27.6 125.1 0 10.9 8.2 45.9 39.1 40.8 93.2L469.6 480H560c8.8 0 16-7.2 16-16 0-17.7-14.3-32-32-32h-53.6l-98.5-104.7 154.4-86.7A58.2 58.2 0 0 0 576 189.9c0-21.4-11.7-41-30.5-51.2-40.6-22.2-99-41.3-99-41.3zM368 136c-13.3 0-24-10.8-24-24 0-13.3 10.7-24 24-24 13.3 0 24 10.7 24 24 0 13.3-10.8 24-24 24z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 224c-79.4 0-192 122.8-192 200.3 0 34.9 26.8 55.8 71.7 55.8 48.8 0 81.1-25.1 120.3-25.1 39.5 0 71.9 25.1 120.3 25.1 44.9 0 71.7-20.9 71.7-55.8C448 346.8 335.4 224 256 224zm-147.3-12.6c-10.4-34.7-42.4-57.1-71.6-50.1-29.1 7-44.3 40.7-33.9 75.3 10.4 34.7 42.4 57.1 71.6 50.1 29.1-7 44.3-40.7 33.9-75.3zm84.7-20.8c30.9-8.1 46.4-49.9 34.6-93.4s-46.5-72-77.5-63.9-46.4 49.9-34.6 93.4c11.8 43.4 46.5 72 77.5 63.9zm281.4-29.3c-29.1-7-61.2 15.5-71.6 50.1-10.4 34.7 4.8 68.4 33.9 75.3 29.1 7 61.2-15.5 71.6-50.1 10.4-34.7-4.8-68.4-33.9-75.3zm-156.3 29.3c30.9 8.1 65.6-20.5 77.5-63.9 11.8-43.4-3.6-85.2-34.6-93.4s-65.6 20.5-77.5 63.9c-11.8 43.4 3.6 85.2 34.6 93.4z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M501.1 402.5c-8-20.8-31.5-31.5-53.1-25.9l-8.4 2.2-2.3-8.4c-5.9-21.4-27-36.5-49-33-25.2 4-40.6 28.6-34 52.6l22.9 82.6c1.5 5.3 7 8.5 12.4 7.1l83-21.5c24.1-6.3 37.7-31.8 28.5-55.7zm-177.6-4c-5.6-20.3-2.3-42 9-59.7 29.7-46.3 98.7-45.5 127.8 4.3 6.4 .1 12.6 1.4 18.6 2.9 10.9-27.9 17.1-58.2 17.1-90C496 119 385 8 248 8S0 119 0 256s111 248 248 248c35.4 0 68.9-7.5 99.4-20.9-.3-.7-23.9-84.6-23.9-84.6zM168 240c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm120 156c0 19.2-28.7 41.5-71.5 44-8.5 .8-12.1-11.8-3.6-15.4l17-7.2c13-5.5 20.8-13.5 20.8-21.5s-7.8-16-20.8-21.5l-17-7.2c-6-2.5-5.7-12.3 0-14.8l17-7.2c13-5.5 20.8-13.5 20.8-21.5s-7.8-16-20.8-21.5l-17-7.2c-8.8-3.7-4.6-16.6 3.6-15.4 42.8 2.5 71.5 24.8 71.5 44 0 13-13.4 27.3-35.2 36C274.6 368.7 288 383 288 396zm16-179c-8.3 7.4-21.6 .4-19.8-10.8 4-25.2 34.2-42.1 59.9-42.1S400 181 404 206.2c1.7 11.1-11.3 18.3-19.8 10.8l-9.5-8.5c-14.8-13.2-46.2-13.2-61 0L304 217z"/></svg></div>
+                <div class="b"></div>
+                <div class="c"></div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
