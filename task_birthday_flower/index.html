@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>과제_꽃말</title>
+    <title>탄생화 알아보기</title>
     <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/index.css">
-
+    <link rel="stylesheet" href="./styles/flower.css">
+    <script src="./scripts/data.js" defer></script>
+    <script src="./scripts/flower.js" defer></script>
 </head>
 <body>
-<div class="main">
-    <input type="number" value="year" id="ye"><em>년</em></h1>
-    <input type="number" value="month" id="mo"><em>월</em></h1>
-    <input type="number" value="day" id="da"><em>일</em></h1>
-    <p>탄생화의 꽃말은?</p>
-</div> 
+    <main>
+        <div class="date">
+            <input type="text" name="year"><span>년</span>
+            <input type="text" name="month"><span>월</span>
+            <input type="text" name="day"><span>일</span>
+        </div>
+        <button type="button" id="result_btn">탄생화와 꽃말은?</button>
+        <p class="total"><!-- 결과위치 --></p>
+    </main>
 </body>
 </html>
