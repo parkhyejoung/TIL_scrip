@@ -19,6 +19,29 @@ langSelect.addEventListener('click',()=>{
         openif = false; //langOpen 숨겨진 상태면 숨기기
     }
 })
+//네이버 로그인 에러 메세지 알고리즘
+//조건 1 ) 아무것도 입력 안함 -> 결과 ) 아이디 또는 전화번호를 입력해 주세요.
+//조건 2 ) 아이디 입력 안함 -> 결과 ) 아이디 입력해 주세요.
+//조건 3 ) 비밀 번호 입력 안함 -> 결과 ) 비밀번호를 입력해 주세요.
+//조건 4 ) 로그인 반복 실패 시 ->  결과 ) 영수증 퀴즈와 이미지 입력해야 로그인 가능
+//조건 5 ) 로그인 실패 시 ->  결과 ) 아이디 비밀번호를 재 확인해주세요
+//조건 6 ) 로그인 정상 진행 되지않을시 로그인페이지 -> 결과 ) 다시 로그인해 주세요.
 
+//조건 1 ) 아무것도 입력 안함 -> 결과 ) 아이디 또는 전화번호를 입력해 주세요.
+const userId = document.querySelector('input[name=user_id]')
+const userPw = document.querySelector('input[name=user_pw]')
+const errorMsg = document.querySelector('.error_msg')
+const loginBtn = document.querySelector('#login_btn')
+console.log(userId,userPw,errorMsg,loginBtn)
+
+loginBtn.addEventListener('click',()=>{
+/*     if(userId.value == '' && userPw.value == ''){
+        errorMsg.textContent = '아이디 또는 전화번호를 입력해 주세요.'
+    } */
+    //삼항조건 활용 조건1
+    //조건식 ? 조건식참결과 : 조건식거짓결과
+    //조건결과대입변수 = 조건식? 조건식참결과 : 조건식거짓결과
+    errorMsg.textContent = userId.value == '' && userPw.value == '' ? '아이디 또는 전화번호를 입력해 주세요.' : '';
+})
 
 
