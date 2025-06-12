@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/timer2.js" defer></script>
+    <style rel="stylesheet" href="../js_level2_m_naver_login/styles/reset.css">
+        .slide_wrap {
+            width: 400px;
+            overflow: hidden;
+        }
+        .slide_wrap .slide_conteinar {
+            display:flex;
+            width: max-content;
+            flex-flow: row-reverse;
+            transform: translateX(-0px);
+            /* 
+            0   = 400*0
+            400 = 400*1
+            800 = 400*2
+            */
+        }
+        .slide_wrap .slide_conteinar .slide { 
+            width: 400px; height: 300px; font-size: 5rem;
+        }
+        .slide_wrap .slide_conteinar .slide1 {background:aqua;}
+        .slide_wrap .slide_conteinar .slide2 {background:aquamarine;}
+        .slide_wrap .slide_conteinar .slide3 {background:blue;}
+    </style>
+</head>
+<body>
+    <!-- 슬라이드 작성 규칙 -->
+    <!-- 슬라이드 전체 그룹(개별슬라이드부모(개별슬라이드*다수)) -->
+    <div class="slide_wrap">
+        <div class="slide_conteinar">
+            <div class = "slide wrap slide1">1</div>
+            <div class = "slide wrap slide2">2</div>
+            <div class = "slide wrap slide3">3</div>
+        </div>
+    </div>
+</body>
+</html>
