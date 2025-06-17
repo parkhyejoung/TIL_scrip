@@ -79,4 +79,20 @@ const kurlyDB = [
         sale:6,
         review:391,
     },
+    {
+        src:'./images/kurly_011.jpg',
+        name:'[노브랜드] 감자칩 오리지널 110g',
+        summary:'바삭하고 담백한 감자칩의 정석',
+        price:1580,
+        sale:9,
+        review:264,
+    },
+    {
+        src:'./images/kurly_012.jpg',
+        name:'[서울우유] 초코우유 300ml',
+        summary:'진한 초콜릿 풍미 가득한 우유',
+        price:1900,
+        sale:5,
+        review:83,
+    },
 ];
