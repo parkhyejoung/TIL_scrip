@@ -13,17 +13,20 @@
     <style>
         * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
         main {}
-        main .swiper{}
-        main .swiper.swiper-wrapper {}
-        main .swiper.swiper-wrapper .swiper-slide {}
-        main .swiper.swiper-wrapper .swiper-slide .slide1 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide2 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide3 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide4 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide5 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide6 {}
-        main .swiper#js-prev1 {}
-        main .swiper#js-next1 {}
+        main .swiper {width:100%; height:400px;}/* 시원하게 보기위해 너비를 pull로 주고 높이 설정을 한것*/
+        main .swiper .swiper-wrapper {}
+        main .swiper .swiper-wrapper .swiper-slide {
+            background:url(./images/bnr4.jpg) center / cover;
+            width:500px;
+        }
+        main .swiper .swiper-wrapper .slide1 {}
+        main .swiper .swiper-wrapper .slide2 {}
+        main .swiper .swiper-wrapper .slide3 {}
+        main .swiper .swiper-wrapper .slide4 {}
+        main .swiper .swiper-wrapper .slide5 {}
+        main .swiper .swiper-wrapper .slide6 {}
+        main .swiper #js-prev1 {}
+        main .swiper #js-next1 {}
         main .swiper_btn {}
         main .swiper_btn a {}
         main .swiper_btn #prev {}
@@ -35,12 +38,12 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <!--슬라이드 개수 시작(아래 swiper slidesPerView보다 많이 생성)-->
-                <div class="swiper-slide slide1"></div>
-                <div class="swiper-slide slide2"></div>
-                <div class="swiper-slide slide3"></div>
-                <div class="swiper-slide slide4"></div>
-                <div class="swiper-slide slide5"></div>
-                <div class="swiper-slide slide6"></div>
+                <div class="swiper-slide slide1">1</div>
+                <div class="swiper-slide slide2">2</div>
+                <div class="swiper-slide slide3">3</div>
+                <div class="swiper-slide slide4">4</div>
+                <div class="swiper-slide slide5">5</div>
+                <div class="swiper-slide slide6">6</div>
             </div>
             <!-- navigation buttons -->
             <div id="js-prev1" class="swiper-button-prev"></div>
@@ -52,13 +55,19 @@
         </div>
     </main>
     <script>
-
+        const mainSwiper = new Swiper('main .swiper',{
+            slidesPerView:'auto', //슬라이드를 분활로 보는 속성인데 슬라이드에 크기를 주면 분할은 auto로 설정한다. 그래서 이미지 크기로 분할을 결정하는데 이런건 슬라이드의 크기를 고정시킬때 적용시키고 크기를 굳이 주지 않아도 되는 분할 같은 경우는 분할을 설정한다. 예를들어 배너처럼 이미지크기가 있고 글자가 별로 없어서 크기를 안줄 경우 이미지를 백그라운드이미지로 줬기 때문에 크기설정을 해야하고 상품리스트 같은 경우는 이미 상품리스트의 크기가 있기 때문에 따로 크기를 주면 이상해지니까 분활로 설정하며 그 사이에 여백을 준다.
+            spaceBetween:14, //슬라이드 여백주기
+            centeredSlides:true, //왼쪽 정렬이 아닌 가운데 정렬로 한다
+            loop:true,
+            navigation:{
+                nextEl:'main #js-next1',
+                prevEl:'main #js-prev1',
+            }
+        })
     </script>
 </body>
 </html>
-
-
-
 
 
 

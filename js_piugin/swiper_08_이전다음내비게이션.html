@@ -12,46 +12,52 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <style>
         * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
-        .best {
-            width: 800px;
-            height: 400px;
-        }
+        .best {width:800px; height:400px;}
         .best .swiper-wrapper {}
         .best .swiper-wrapper .swiper-slide {
-            background: url(./images/slide.jpg) center / cover;
+            background:url(./images/bnr2.jpg) center / cover;
         }
         .best .swiper-wrapper .slide1 {}
         .best .swiper-wrapper .slide2 {}
         .best .swiper-wrapper .slide3 {}
         .best .swiper-wrapper .slide4 {}
-        .best .swiper-button-prev {}
-        .best .swiper-button-next {}
+        section {position:relative; width:max-content; margin:0 auto;}
+        section .swiper-button-prev {
+            left:-40px;
+            width:25px; height:25px; background:url(./images/slide.jpg) center / cover;
+            transform:scaleX(90px)
+        }
+        section .swiper-button-next {
+            right:-40px;
+            width:25px; height:25px; background:url(./images/slide.jpg) center / cover;
+        }
+        section .swiper-button-next::after {display:none;}
+        section .swiper-button-prev::after {display:none;}
+        section .swiper-button-prev,
+        section .swiper-button-next {color:#f0f; transform:scale(0.5);}
     </style>
 </head>
 <body>
-    <div class="swiper best">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide1"></div>
-            <div class="swiper-slide slide2"></div>
-            <div class="swiper-slide slide3"></div>
-            <div class="swiper-slide slide4"></div>
+    <section>
+        <div class="swiper best">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1"></div>
+                <div class="swiper-slide slide2"></div>
+                <div class="swiper-slide slide3"></div>
+                <div class="swiper-slide slide4"></div>
+            </div>
         </div>
         <div class="swiper-button-prev"></div> <!--이전 버튼(아래 js와 이름일치)-->
         <div class="swiper-button-next"></div> <!--다음 버튼(아래 js와 이름일치)-->
-    </div>
+    </section>
     <script>
         const bestSwiper = new Swiper('.best',{
             navigation:{
-                nextEl:'.best .swiper-button-next',
-                prevEl:'.best .swiper-button-prev',
-            }
+                nextEl:'section .swiper-button-next', //7번과 같은 css식으로 태그를 잡으면 버튼을 눌렀을 때 다음 페이지로 넘어가거나 이전 페이지로 넘어가는 동작을 하게 만든다
+                prevEl:'.best+.swiper-button-prev',
+            },
+            loop:true,
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-

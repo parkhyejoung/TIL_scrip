@@ -13,13 +13,13 @@
     <style>
         * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
         main {}
-        main .swiper{}
-        main .swiper.swiper-wrapper {}
-        main .swiper.swiper-wrapper .swiper-slide {}
-        main .swiper.swiper-wrapper .swiper-slide .slide1 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide2 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide3 {}
-        main .swiper.swiper-wrapper .swiper-slide .slide4 {}
+        main .swiper{width:400px; height:600px;}
+        main .swiper .swiper-wrapper {}
+        main .swiper .swiper-wrapper .swiper-slide {background:url(./images/slide.jpg) center / cover;}
+        main .swiper .swiper-wrapper .swiper-slide .slide1 {}
+        main .swiper .swiper-wrapper .swiper-slide .slide2 {}
+        main .swiper .swiper-wrapper .swiper-slide .slide3 {}
+        main .swiper .swiper-wrapper .swiper-slide .slide4 {}
         main .btn {}
         main .btn a {}
         main .btn a.pause {}
@@ -45,30 +45,20 @@
 
     <script>
         
-        var mySwiper = new Swiper('main .swiper.swiper-wrapper',{
-            direction:'horizontal',
-            autoplay:{
-                delay:1000, //1초(설정 안할 시 기본3초)
-                disableOnInteraction:false //true일 경우 마우스가 올라가면 재생 일시정지
-            },
-            loop:true //true설정 시 3->1 로 자연스럽게 넘어감. (기본값 false)
-        })//e: swiper
-        
-        var swiper_pause = document.querySelector('.pause') //일시정지 변수
-        var swiper_start = document.querySelector('.start') //재생 변수
-        swiper_pause.addEventListener('click',function(){ //일시정지 클릭 시
-            console.log('pause') //콘솔출력
-            mySwiper.autoplay.stop() //swiper 플러그인 일시정지
-        })
-        swiper_start.addEventListener('click',function(){ //재생 클릭 시(일시정지 후)
-            console.log('start') //콘솔출력
-            mySwiper.autoplay.start() //플러그인 다시재생하기
-        })
+        const swiper = new Swiper('main .swiper',{
+            autoplay:{delay:1000,}, //1초마다 자동으로 넘어가기
+            loop:true, //반복하기(끝 페이지에서 첫 페이지로 자연스럽게 넘어가기)
+        });
+        const stopBtn = document.querySelector('.pause');
+        stopBtn.addEventListener('click',()=>{swiper.autoplay.stop();}) //클릭하면 자동으로 넘어가는거 멈추기
+        const restartBtn = document.querySelector('.start');
+        restartBtn.addEventListener('click',()=>{swiper.autoplay.start();}) //클릭하면 다시 자동으로 넘어가는거 시작하기
+        //스와이퍼변수명.autoplay.stop()
+        //스와이퍼변수명.autoplay.start()
 
     </script>
 </body>
 </html>
-
 
 
 
